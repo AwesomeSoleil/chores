@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { firebaseApp } from '../../firebase';
 import styles from './App.css';
 
 class App extends Component {
+
+    _signOut() {
+        firebaseApp.auth().signOut();
+    }
     render() {
         return (
-            <div>App</div>
+            <div>
+                <button onClick={() => {this._signOut()}}>
+                    Sign Out
+                </button>
+            </div>
         );
     }
 }

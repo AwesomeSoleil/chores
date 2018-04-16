@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { firebaseApp } from '../../firebase';
 import styles from './SignUp.css';
 
@@ -26,6 +27,7 @@ class SignUp extends Component {
                     }
                 );
     };
+
     render() {
         return (
             <form>
@@ -39,16 +41,21 @@ class SignUp extends Component {
                         />
                     </label>
                     <label>
+                        password
                         <input type='password'
                             placeholder='password'
                             onChange={event => { this.setState({ password: event.target.value }) }}
                         />
                     </label>
                     <button type='button' onClick={() => { this._signUp() }}>Sign Up</button>
+                    <div>
+                        <Link to='/signin'>I'd better sign in</Link>
+                    </div>
                 </fieldset>
                 <p>{ this.state.error.message }</p>
             </form>
         );
     }
 }
+
 export default SignUp;
