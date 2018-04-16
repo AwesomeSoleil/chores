@@ -47,7 +47,7 @@ class SignIn extends Component {
                             onChange={event => { this.setState({ password: event.target.value }) }}
                         />
                     </label>
-                    <button type='button' onClick={() => { this._signIn() }}>Sign Up</button>
+                    <button type='button' onClick={() => { this._signIn() }}>Sign In</button>
                     <div>
                         <Link to='/signup'>I'm new here and have to sign up</Link>
                     </div>
