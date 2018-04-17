@@ -10,3 +10,4 @@ const config = {
   };
 
   export const firebaseApp = firebase.initializeApp(config);
+  export const taskRef = firebase.database().ref('tasks'); // Reference points to tasks
