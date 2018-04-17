@@ -17,7 +17,6 @@ class App extends Component {
                 <h3>things to be done</h3>
                 <AddTask />
                 <TaskList />
-                <p>Signed in as {this.props.email}</p>
                 <button onClick={() => {this._signOut()}}>
                     Sign Out
                 </button>
@@ -26,8 +25,4 @@ class App extends Component {
     }
 }
 
-const getUserEmail = (state) => {
-    return { email: state.email };
-};
-
-export default connect(getUserEmail)(App);
+export default App;

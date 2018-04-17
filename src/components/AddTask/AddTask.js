@@ -16,7 +16,7 @@ class AddTask extends Component {
     };
 
     _addTask = (event) => {
-        taskRef.push({ email: this.props.email, title: this.state.title });
+        taskRef.push({ email: this.props.user.email, title: this.state.title });
     };
 
     render() {
@@ -45,8 +45,9 @@ class AddTask extends Component {
     }
 }
 
-const getUserEmail = (state) => {
-    return { email: state.email };
+const mapStateToProps = (state) => {
+    const user = state.user;
+    return { user };
 };
 
-export default connect(getUserEmail)(AddTask);
+export default connect(mapStateToProps)(AddTask);
