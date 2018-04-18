@@ -12,7 +12,8 @@ class TaskList extends Component {
             let tasks = [];
             snapshot.forEach(task => {
                 const { email, title } = task.val();
-                tasks.push({ email, title });
+                const entryKey = task.key;
+                tasks.push({ email, title, entryKey });
             });
             this.props.setTasks(tasks);
         });
@@ -24,7 +25,9 @@ class TaskList extends Component {
                     this.props.tasks.map(
                         (task, index) => {
                             return (
-                                <div key={ index }>< TaskItem task={ task }/></div>
+                                <div key={ index }>
+                                    < TaskItem task={ task }/>
+                                </div>
                             );
                         }
                     )

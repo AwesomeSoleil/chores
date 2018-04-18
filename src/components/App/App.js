@@ -16,7 +16,9 @@ class App extends Component {
             <div>
                 <h3>things to be done</h3>
                 <AddTask />
+                <h4>tasks</h4>
                 <TaskList />
+                <hr />
                 <button onClick={() => {this._signOut()}}>
                     Sign Out
                 </button>
