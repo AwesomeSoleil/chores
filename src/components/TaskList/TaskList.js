@@ -18,6 +18,7 @@ class TaskList extends Component {
             this.props.setTasks(tasks);
         });
     }
+
     render() {
         return (
             <div>
@@ -39,9 +40,7 @@ class TaskList extends Component {
 
 const mapStateToProps = (state) => {
     const tasks = state.tasks;
-    return {
-        tasks
-    };
+    return { tasks };
 };
 
 // in the connect below I'm using shortcut passing the action creator setTasks,

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { completedTaskRef } from '../../firebase';
+import { setCompleted } from '../../actions';
 import styles from './CompletedTaskList.css';
 
 class CompletedTaskList extends Component {
@@ -12,15 +14,29 @@ class CompletedTaskList extends Component {
                     const { email, title } = task.val();
                     completedTasks.push({ email, title });
                 });
-                console.log(completedTasks);
+                this.props.setCompleted(completedTasks);
             }
         );
     }
+
     render() {
         return (
-            <div>completed tasks</div>
+            <div>
+                {
+                    this.props.completedTasks.map(
+                        (completedTask, index) => {
+                            return <div key={ index }>{completedTask.title}</div>
+                        }
+                    )
+                }
+            </div>
         );
     }
 }
 
-export default CompletedTaskList;
+const mapStateToProps = (state) => {
+    const completedTasks = state.completedTasks;
+    return { completedTasks };
+};
+
+export default connect(mapStateToProps, { setCompleted })(CompletedTaskList);
