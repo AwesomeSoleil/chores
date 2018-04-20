@@ -31,7 +31,6 @@ class CompletedTaskList extends Component {
     };
 
     render() {
-        console.log('length is', this.props.completedTasks.length);
         return (
             <div>
                 <ul>

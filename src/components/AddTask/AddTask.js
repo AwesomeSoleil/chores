@@ -16,7 +16,9 @@ class AddTask extends Component {
     };
 
     _addTask = (event) => {
+        event.preventDefault();
         taskRef.push({ email: this.props.user.email, title: this.state.title });
+        this.setState({ title: '' });
     };
 
     render() {
@@ -30,13 +32,13 @@ class AddTask extends Component {
                                 type='text'
                                 placeholder='new task'
                                 onChange={ (event) => { this._inputChangeHandler(event) } }
+                                value={ this.state.title }
                             />
-                            <button
-                                type='button'
+                            <input
+                                type='submit'
+                                value='submit'
                                 onClick={ (event) => { this._addTask(event) } }
-                            >
-                                submit
-                            </button>
+                            />
                         </label>
                     </fieldset>
                 </form>
