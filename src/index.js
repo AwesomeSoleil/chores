@@ -1,6 +1,7 @@
 import React from 'react';
 import reducer from './reducers';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
+import { createLogger } from 'redux-logger'; // for logging purposes only, remove before build
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 import { Router, Route } from 'react-router-dom';
@@ -12,8 +13,9 @@ import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/SignUp/SignUp';
 import styles from './index.css';
 
-const history = createBrowserHistory(); // let ?
-const store = createStore(reducer);
+const history = createBrowserHistory();
+const logger = createLogger(); // remove befor build
+const store = createStore(reducer, applyMiddleware(logger)); // simplify before build
 
 firebaseApp.auth().onAuthStateChanged(
     user => {

@@ -3,8 +3,7 @@ import { SET_TASKS } from '../constants';
 export default (state = [], action) => {
     switch (action.type) {
         case SET_TASKS:
-            const { tasks } = action;
-            return tasks;
+            return action.tasks;
         default:
             return state;
     }
