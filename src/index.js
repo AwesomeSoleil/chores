@@ -1,6 +1,6 @@
 import React from 'react';
 import reducer from './reducers';
-import { applyMiddleware, createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux'; //remove middleWare
 import { createLogger } from 'redux-logger'; // for logging purposes only, remove before build
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
