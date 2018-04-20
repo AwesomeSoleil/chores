@@ -8,13 +8,3 @@ export default (state = [], action) => {
             return state;
     }
 };
-
-/* export default (state = [], action) => {
-    switch (action.type) {
-        case SET_COMPLETED:
-        const newState = action.completedTasks;
-            return [...state, newState];
-        default:
-            return state;
-    }
-}; */

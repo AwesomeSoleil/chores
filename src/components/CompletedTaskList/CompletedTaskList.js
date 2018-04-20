@@ -19,15 +19,28 @@ class CompletedTaskList extends Component {
         );
     }
 
+    _renderCompletedTaskList = (completedTasks) => {
+        return completedTasks.map((completedTask, index) => {
+                return <li key={ index }>{completedTask.title}</li>
+            }
+        )
+    };
+
+    _clearList = () => {
+        completedTaskRef.set([]);
+    };
+
     render() {
+        console.log('length is', this.props.completedTasks.length);
         return (
             <div>
-                {
-                    this.props.completedTasks.map(
-                        (completedTask, index) => {
-                            return <div key={ index }>{completedTask.title}</div>
-                        }
-                    )
+                <ul>
+                    { this._renderCompletedTaskList(this.props.completedTasks) }
+                </ul>
+                { this.props.completedTasks.length ?
+                    <button onClick={() => { this._clearList() }}>
+                        Clear All
+                    </button> : null 
                 }
             </div>
         );

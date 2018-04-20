@@ -19,21 +19,22 @@ class TaskList extends Component {
         });
     }
 
+    _renderTaskList = (tasks) => {
+        return tasks.map(task => {
+                return (
+                    <li key={ task.entryKey }>
+                        <TaskItem task={ task } />
+                    </li>
+                );
+            }
+        );
+    };
+
     render() {
         return (
-            <div>
-                {
-                    this.props.tasks.map(
-                        (task, index) => {
-                            return (
-                                <div key={ index }>
-                                    < TaskItem task={ task }/>
-                                </div>
-                            );
-                        }
-                    )
-                }
-            </div>
+            <ul>
+                { this._renderTaskList(this.props.tasks) }
+            </ul>
         );
     }
 }
