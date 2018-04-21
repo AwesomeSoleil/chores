@@ -54,7 +54,7 @@ class SignIn extends Component {
                         <div className={styles.sign_in_link}>
                             <Link to='/signup'>I'm new here and have to sign up</Link>
                         </div>
-                        <p>{ this.state.error.message }</p>
+                        <p className={styles.error}>{ this.state.error.message }</p>
                     </div>
                 </form>
             </div>

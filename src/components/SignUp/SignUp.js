@@ -30,32 +30,36 @@ class SignUp extends Component {
 
     render() {
         return (
-            <form>
-                <fieldset>
-                    <legend>Sign Up</legend>
-                    <label>
-                        email
-                        <input type='email'
-                            placeholder='email'
-                            onChange={event => { this.setState({ email: event.target.value }) }}
-                        />
-                    </label>
-                    <label>
-                        password
+            <div className={styles.container}>
+            <h3>sign up</h3>
+            <form className={styles.sign_up_form}>
+                <div className={styles.sign_up_input_group}>
+                    <label htmlFor='sign_up_email'>email:</label>
+                    <input type='email'
+                        id='sign_up_email'
+                        placeholder='your email'
+                        onChange={event => { this.setState({ email: event.target.value }) }}
+                    />
+                </div>
+                <div className={styles.sign_up_input_group}>
+                    <label htmlFor='sign_up_password'>password:</label>
                         <input type='password'
-                            placeholder='password'
+                            id='sign_up_password'
+                            placeholder='your password'
                             onChange={event => { this.setState({ password: event.target.value }) }}
                         />
-                    </label>
+                </div>
+                <div className={styles.sign_up_submit_group}>
                     <button type='button' onClick={() => { this._signUp() }}>
                         Sign Up
                     </button>
-                    <div>
+                    <div className={styles.sign_up_link}>
                         <Link to='/signin'>I'd better sign in</Link>
                     </div>
-                </fieldset>
-                <p>{ this.state.error.message }</p>
+                    <p className={styles.error}>{ this.state.error.message }</p>
+                </div>
             </form>
+            </div>
         );
     }
 }

@@ -75,3 +75,7 @@ input[type='email']:focus, input[type='password']:focus {
     font-size: 0.9em;
     padding: 10px 0px;
 }
+
+.error {
+    color: maroon;
+}
