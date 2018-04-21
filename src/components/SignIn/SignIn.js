@@ -30,29 +30,35 @@ class SignIn extends Component {
 
     render() {
         return (
-            <form>
-                <fieldset>
-                    <legend>Sign In</legend>
-                    <label>
-                        email
+            <form className={styles.sign_in_form}>
+            <section className={styles.sign_in_form_group}>
+                <h3>sign in</h3>
+                <ul className={styles.sign_in_form_fields}>
+                    <li>
+                        <label htmlFor='sign_in_email'>email:</label>
                         <input type='email'
-                            placeholder='email'
+                            id='sign_in_email'
+                            placeholder='your email'
                             onChange={event => { this.setState({ email: event.target.value }) }}
                         />
-                    </label>
-                    <label>
-                        password
+                    </li>
+                    <li>
+                        <label htmlFor='sign_in_password'>password:</label>
                         <input type='password'
-                            placeholder='password'
+                            id='sign_in_password'
+                            placeholder='your password'
                             onChange={event => { this.setState({ password: event.target.value }) }}
                         />
-                    </label>
-                    <button type='button' onClick={() => { this._signIn() }}>Sign In</button>
-                    <div>
-                        <Link to='/signup'>I'm new here and have to sign up</Link>
-                    </div>
-                </fieldset>
+                    </li>
+                </ul>
+            </section>
+            <section className={styles.sign_in_form_submit}>
+                <button type='button' onClick={() => { this._signIn() }}>Sign In</button>
+                <div>
+                    <Link to='/signup'>I'm new here and have to sign up</Link>
+                </div>
                 <p>{ this.state.error.message }</p>
+            </section>
             </form>
         );
     }
