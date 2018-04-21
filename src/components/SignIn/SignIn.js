@@ -30,37 +30,36 @@ class SignIn extends Component {
 
     render() {
         return (
-            <form className={styles.sign_in_form}>
-            <section className={styles.sign_in_form_group}>
+            <div className={styles.container}>
                 <h3>sign in</h3>
-                <ul className={styles.sign_in_form_fields}>
-                    <li>
+                <form className={styles.sign_in_form}>
+                    <div className={styles.sign_in_input_group}>
                         <label htmlFor='sign_in_email'>email:</label>
                         <input type='email'
                             id='sign_in_email'
                             placeholder='your email'
                             onChange={event => { this.setState({ email: event.target.value }) }}
                         />
-                    </li>
-                    <li>
+                    </div>
+                    <div className={styles.sign_in_input_group}>
                         <label htmlFor='sign_in_password'>password:</label>
                         <input type='password'
                             id='sign_in_password'
                             placeholder='your password'
                             onChange={event => { this.setState({ password: event.target.value }) }}
                         />
-                    </li>
-                </ul>
-            </section>
-            <section className={styles.sign_in_form_submit}>
-                <button type='button' onClick={() => { this._signIn() }}>Sign In</button>
-                <div>
-                    <Link to='/signup'>I'm new here and have to sign up</Link>
-                </div>
-                <p>{ this.state.error.message }</p>
-            </section>
-            </form>
+                    </div>
+                    <div className={styles.sign_in_submit_group}>
+                        <button type='button' onClick={() => { this._signIn() }}>Sign In</button>
+                        <div className={styles.sign_in_link}>
+                            <Link to='/signup'>I'm new here and have to sign up</Link>
+                        </div>
+                        <p>{ this.state.error.message }</p>
+                    </div>
+                </form>
+            </div>
         );
     }
 }
+
 export default SignIn;
