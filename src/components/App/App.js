@@ -19,8 +19,10 @@ const App = () => {
             <h4>completed tasks</h4>
             <CompletedTaskList />
             <hr />
-            <button onClick={() => { signOut() }}>
-                Sign Out
+            <button className={styles.sign_out}
+                onClick={() => { signOut() }}
+            >
+                sign out
             </button>
         </div>
     );

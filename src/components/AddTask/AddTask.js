@@ -25,22 +25,19 @@ export class AddTask extends Component { //export added for testing purposes
         return (
             <div>
                 <form>
-                    <fieldset>
-                        <label>
-                            add a task
-                            <input
-                                type='text'
-                                placeholder='new task'
-                                onChange={ (event) => { this._inputChangeHandler(event) } }
-                                value={ this.state.title }
-                            />
-                            <input
-                                type='submit'
-                                value='submit'
-                                onClick={ (event) => { this._addTask(event) } }
-                            />
-                        </label>
-                    </fieldset>
+                    <label htmlFor='new_task'>add a task:</label>
+                        <input type='text'
+                            id='new_task'
+                            placeholder='new task'
+                            onChange={ (event) => { this._inputChangeHandler(event) } }
+                            value={ this.state.title }
+                        />
+                        <input
+                            type='submit'
+                            value='submit'
+                            onClick={ (event) => { this._addTask(event) } }
+                        />
+                    
                 </form>
             </div>
         );

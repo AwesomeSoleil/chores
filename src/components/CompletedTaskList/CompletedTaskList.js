@@ -37,8 +37,9 @@ class CompletedTaskList extends Component {
                     { this._renderCompletedTaskList(this.props.completedTasks) }
                 </ul>
                 { this.props.completedTasks.length ?
-                    <button onClick={() => { this._clearList() }}>
-                        Clear All
+                    <button className={styles.clear_all}
+                        onClick={() => { this._clearList() }}>
+                        clear all
                     </button> : null 
                 }
             </div>

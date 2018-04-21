@@ -1,0 +1,17 @@
+.clear_all {
+    border-radius: 2px;
+    box-sizing: content-box;
+    color: white;
+    background-color: #8B798C;
+    font-size: 1.1em;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.35em 0.75em;
+    border: none;
+    cursor: pointer;
+}
+
+.clear_all:hover {
+    background-color: #C17CCF;
+}

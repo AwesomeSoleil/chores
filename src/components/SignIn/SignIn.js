@@ -22,7 +22,6 @@ class SignIn extends Component {
                 .signInWithEmailAndPassword(userEmail, userPassword)
                 .catch(
                     (error) => {
-                        console.log('sign in error', error);
                         this.setState({ error });
                     }
                 );
@@ -30,7 +29,7 @@ class SignIn extends Component {
 
     render() {
         return (
-            <div className={styles.container}>
+            <div>
                 <h3>sign in</h3>
                 <form className={styles.sign_in_form}>
                     <div className={styles.sign_in_input_group}>
