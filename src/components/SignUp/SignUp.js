@@ -42,11 +42,11 @@ class SignUp extends Component {
                     </div>
                     <div className={styles.sign_up_input_group}>
                         <label htmlFor='sign_up_password'>password:</label>
-                            <input type='password'
-                                id='sign_up_password'
-                                placeholder='your password'
-                                onChange={event => { this.setState({ password: event.target.value }) }}
-                            />
+                        <input type='password'
+                            id='sign_up_password'
+                            placeholder='your password'
+                            onChange={event => { this.setState({ password: event.target.value }) }}
+                        />
                     </div>
                     <div className={styles.sign_up_submit_group}>
                         <button type='button' onClick={() => { this._signUp() }}>

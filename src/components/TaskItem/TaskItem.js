@@ -26,7 +26,7 @@ class TaskItem extends Component {
                 <div className={styles.task_list_item_user}>
                     submitted by { this.props.task.email }
                 </div>
-                <div className={styles.task_list_item_delete_button}>
+                <div className={styles.task_list_item_delete}>
                     <button
                         className={ styles }
                         onClick={ () => {this._clickHandler()} }

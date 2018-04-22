@@ -22,7 +22,9 @@ class TaskList extends Component {
     _renderTaskList = (tasks) => {
         return tasks.map(task => {
                 return (
-                    <li key={ task.entryKey }>
+                    <li key={ task.entryKey }
+                        className={styles.task_list_item}
+                    >
                         <TaskItem task={ task } />
                     </li>
                 );

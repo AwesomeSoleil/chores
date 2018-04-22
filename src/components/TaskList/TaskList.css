@@ -1,4 +1,9 @@
 .task_list {
     list-style-type: none;
+    padding: 0;
+}
+
+.task_list_item {
+    margin-bottom: 0.5em;
     background-color: #F6DDCE;
 }

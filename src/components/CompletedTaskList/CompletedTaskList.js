@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { completedTaskRef } from '../../firebase';
+import CompletedTaskItem from '../CompletedTaskItem/CompletedTaskItem';
 import { setCompleted } from '../../actions';
 import styles from './CompletedTaskList.css';
 
@@ -21,9 +22,15 @@ class CompletedTaskList extends Component {
 
     _renderCompletedTaskList = (completedTasks) => {
         return completedTasks.map((completedTask, index) => {
-                return <li key={ index }>{completedTask.title} performed by {completedTask.email}</li>
+                return (
+                    <li key={ index }
+                        className={styles.task_list_item}
+                    >
+                        <CompletedTaskItem completedTask={ completedTask }/>
+                    </li>
+                );
             }
-        )
+        );
     };
 
     _clearList = () => {
@@ -33,7 +40,7 @@ class CompletedTaskList extends Component {
     render() {
         return (
             <div>
-                <ul>
+                <ul className={styles.task_list}>
                     { this._renderCompletedTaskList(this.props.completedTasks) }
                 </ul>
                 { this.props.completedTasks.length ?

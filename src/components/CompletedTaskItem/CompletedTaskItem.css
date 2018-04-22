@@ -23,25 +23,3 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
-.task_list_item_delete {
-    text-align: right;
-}
-
-.task_list_item_delete button {
-    border-radius: 2px;
-    box-sizing: content-box;
-    color: white;
-    background-color: #8B798C;
-    font-size: 0.9em;
-    font-weight: 300;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 0.35em 0.75em;
-    border: none;
-    cursor: pointer;
-}
-    
-.task_list_item_delete button:focus, .task_list_item_delete button:hover {
-    background-color: #C17CCF;
-}
