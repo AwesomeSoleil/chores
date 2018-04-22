@@ -21,7 +21,7 @@ class CompletedTaskList extends Component {
 
     _renderCompletedTaskList = (completedTasks) => {
         return completedTasks.map((completedTask, index) => {
-                return <li key={ index }>{completedTask.title}</li>
+                return <li key={ index }>{completedTask.title} performed by {completedTask.email}</li>
             }
         )
     };

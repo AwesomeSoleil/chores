@@ -32,7 +32,7 @@ class TaskList extends Component {
 
     render() {
         return (
-            <ul>
+            <ul className={styles.task_list}>
                 { this._renderTaskList(this.props.tasks) }
             </ul>
         );

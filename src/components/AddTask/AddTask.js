@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { taskRef } from '../../firebase';
 import styles from './AddTask.css';
 
-export class AddTask extends Component { //export added for testing purposes
+class AddTask extends Component {
     constructor(props) {
         super(props);
         this.state = {

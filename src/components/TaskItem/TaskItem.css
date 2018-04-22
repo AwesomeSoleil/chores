@@ -1,0 +1,12 @@
+.task_list_item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+    padding: 10px; 
+}
+
+.task_list_item_user {
+    font-style: italic;
+    font-size: 0.8em;
+}

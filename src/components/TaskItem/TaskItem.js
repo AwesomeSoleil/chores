@@ -19,20 +19,21 @@ class TaskItem extends Component {
 
     render() {
         return (
-            <div>
-                <strong>
+            <div className={styles.task_list_item}>
+                <div className={styles.task_list_item_title}>
                     { this.props.task.title }
-                </strong>
-                &nbsp;
-                <span>
-                    submitted by <em>{ this.props.task.email }</em>
-                </span>
-                <button
-                    className={ styles }
-                    onClick={ () => {this._clickHandler()} }
-                >
-                    done
-                </button>
+                </div>
+                <div className={styles.task_list_item_user}>
+                    submitted by { this.props.task.email }
+                </div>
+                <div className={styles.task_list_item_delete_button}>
+                    <button
+                        className={ styles }
+                        onClick={ () => {this._clickHandler()} }
+                    >
+                        done
+                    </button>
+                </div>
             </div>
         );
     }
