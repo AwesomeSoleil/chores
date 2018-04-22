@@ -1,25 +1,17 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import styles from './CompletedTaskItem.css';
 
-class CompletedTaskItem extends Component {
-    render() {
-        return (
-            <div className={styles.task_list_item}>
-                <div className={styles.task_list_item_title}>
-                    { this.props.completedTask.title }
-                </div>
-                <div className={styles.task_list_item_user}>
-                    performed by { this.props.completedTask.email }
-                </div>
+const CompletedTaskItem = (props) => {
+    return (
+        <div className={styles.task_list_item}>
+            <div className={styles.task_list_item_title}>
+                { props.completedTask.title }
             </div>
-        );
-    }
-}
-
-const mapStateToProps = (state) => {
-    const user = state.user;
-    return { user };
+            <div className={styles.task_list_item_user}>
+                performed by { props.completedTask.email }
+            </div>
+        </div>
+    );    
 };
 
 export default CompletedTaskItem;

@@ -31,7 +31,7 @@ class SignIn extends Component {
         return (
             <div>
                 <h3>sign in</h3>
-                <form className={styles.sign_in_form}>
+                <form>
                     <div className={styles.sign_in_input_group}>
                         <label htmlFor='sign_in_email'>email:</label>
                         <input type='email'

@@ -28,7 +28,6 @@ class TaskItem extends Component {
                 </div>
                 <div className={styles.task_list_item_delete}>
                     <button
-                        className={ styles }
                         onClick={ () => {this._clickHandler()} }
                     >
                         done

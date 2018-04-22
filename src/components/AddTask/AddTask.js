@@ -25,19 +25,22 @@ class AddTask extends Component {
         return (
             <div>
                 <form>
-                    <label htmlFor='new_task'>add a task:</label>
+                    <div className={styles.new_task_input_group}>
+                        <label htmlFor='new_task'>add a task:</label>
                         <input type='text'
                             id='new_task'
                             placeholder='new task'
                             onChange={ (event) => { this._inputChangeHandler(event) } }
                             value={ this.state.title }
                         />
+                    </div>
+                    <div className={styles.new_task_submit}>
                         <input
                             type='submit'
                             value='submit'
                             onClick={ (event) => { this._addTask(event) } }
                         />
-                    
+                    </div>
                 </form>
             </div>
         );

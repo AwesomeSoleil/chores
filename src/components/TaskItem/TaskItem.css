@@ -7,7 +7,7 @@
 }
 
 .task_list_item_title {
-    flex: 1 0 100px;
+    flex: 1 0 200px;
     padding-right: 8px;
     overflow: hidden;
     text-overflow: ellipsis;
