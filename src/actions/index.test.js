@@ -1,4 +1,3 @@
-import React from 'react';
 import * as actions from './index';
 import { SIGNED_IN, SET_TASKS, SET_COMPLETED } from '../constants';
 
