@@ -15,6 +15,10 @@ import styles from './index.css';
 const history = createBrowserHistory();
 const store = createStore(reducer);
 
+/* onAuthStateChanged attaches observer; observer gets called whenever the user's
+   sign-in state changes. When a user successfully signs in, I can get information
+   about the user in the observer.
+*/
 firebaseApp.auth().onAuthStateChanged(
     user => {
         if (user) {
